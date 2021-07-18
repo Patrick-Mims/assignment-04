@@ -8,7 +8,7 @@ public:
     void removeRandom340();
     void removeSecondNode340();
 
-    /* Curent Size */
+    /* Current Size */
     void getCurrentSize340Iterative();
     void getCurrentSize340Recursive();
     void getCurrentSize340RecursiveHelper();
