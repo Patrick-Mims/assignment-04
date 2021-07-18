@@ -1,6 +1,13 @@
 #ifndef _INCLUDE_H
 #define _INCLUDE_H
-class Asmt
+
+#include <iostream>
+#include <vector>
+#include "Node.h"
+
+using namespace std;
+template <class ItemType>
+class Asmt : public Node<ItemType>
 {
 private:
 public:
