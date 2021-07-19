@@ -9,13 +9,17 @@
 */
 #include "BagInterface.h"
 
+/* PMIMS: this wasnt's originally in here, it's in the book - so I added it. */
+#include "Node.h"
+
 //
 //
 // PLEASE DO NOT CHANGE THIS FILE
 //
 //
 
-template <typename ItemType>
+//template <typename ItemType>
+template <class ItemType>
 class LinkedBag : public BagInterface<ItemType>
 {
 
@@ -55,5 +59,5 @@ private:
 	// pointer to the node or the null pointer
 	Node<ItemType> *getPointerTo(const ItemType &) const;
 };
-
+/* pmims */
 #include "../src/Node.cpp"
