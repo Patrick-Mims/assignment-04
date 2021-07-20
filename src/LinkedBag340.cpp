@@ -81,9 +81,6 @@ int LinkedBag<ItemType>::getCurrentSize340Recursive() const
 template <class ItemType>
 int LinkedBag<ItemType>::getCurrentSize340RecursiveHelper(Node<ItemType> *element) const
 {
-    cout << "Get Current Size 340 Recursive Helper: " << endl;
-
-    return element->getNext();
 }
 
 /* counts the number of nodes in the Linked Bag recursively. 
@@ -94,48 +91,57 @@ int LinkedBag<ItemType>::getCurrentSize340RecursiveNoHelper() const {}
 /* recursively counts the number of times an entry appears in the Linked Bag. 
    Use 1 helper function: getFrequencyOf340RecursiveHelper */
 template <class ItemType>
-int LinkedBag<ItemType>::getFrequencyOf340Recursive(const ItemType &anEntry) const
+int LinkedBag<ItemType>::getFrequencyOf340Recursive(const ItemType &value) const
 {
     /*  Initially, curPtr must point to the first node. 
         Because headPtr points to the first node, simply 
         copy headPtr into currPtr by writing */
 
-    int counter = 0, frequency = 0;
-
-    Node<ItemType> *curPtr = headPtr;
-
-    /*
-    while ((curPtr != nullptr) && (counter < itemCount))
-    {
-        if (anEntry == curPtr->getItem())
-        {
-            frequency += 1;
-        }
-
-        counter += 1;
-        curPtr = curPtr->getNext();
-    }
-    */
-
     //curPtr = curPtr->getNext();
     // keep calling getCurrentSize340RecursiveHelper();
+    /*
     if (anEntry == curPtr->getItem())
     {
         frequency++;
     }
     else
     {
-        frequency = getCurrentSize340RecursiveHelper(curPtr);
+        frequency = getFrequencyOf340RecursiveHelper(curPtr);
     }
 
     counter++;
+    */
+    int frequency = 0;
+
+    Node<ItemType> *curPtr = headPtr;
+
+    if (curPtr == nullptr)
+    {
+        return frequency;
+    }
+    else
+    {
+        frequency = getFrequencyOf340RecursiveHelper(curPtr, value);
+    }
 
     return frequency;
 }
 
 /* helper function */
 template <class ItemType>
-int LinkedBag<ItemType>::getFrequencyOf340RecursiveHelper(Node<ItemType> *, const ItemType &) const {}
+int LinkedBag<ItemType>::getFrequencyOf340RecursiveHelper(Node<ItemType> *node, const ItemType &theItem) const
+{
+    cout << "Get Current Size 340 Recursive Helper: " << endl;
+
+    static int count = 0;
+
+    if (node->getItem() == theItem)
+    {
+        count++;
+    }
+
+    return count;
+}
 
 /* recursively counts the number of times an entry appears in the Linked Bag.
     This recursive function does not use any helper functions */
