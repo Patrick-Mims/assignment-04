@@ -19,9 +19,10 @@ int main()
 	// 1. Create a bag and add initial nodes
 	cout << "--->>>>> Test 1 --->>>>>" << endl;
 
-	//unique_ptr<LinkedBag<string>> bag{std::make_unique<LinkedBag<string>>(1)};
-	unique_ptr<LinkedBag<string>> bag;
-	//bag = {make_unique<LinkedBag<string>>()};
+	//unique_ptr<LinkedBag<string>> bag{make_unique<LinkedBag<string>>()};
+	unique_ptr<Helper<string>> bag;
+	//auto bag{make_unique<LinkedBag<string>>()};
+	//unique_ptr<LinkedBag<string>> bag{make_unique<LinkedBag<string>>()};
 
 	// A small vector of small objects to test the bag
 	vector<string> items{"#-END", "5-FIVE", "4-FOUR", "4-FOUR", "3-THREE", "2-TWO", "1-ONE", "0-ZERO", "#-BEGIN"};
@@ -30,13 +31,11 @@ int main()
 	for (cItr = items.begin(); cItr != items.end(); cItr++)
 	{
 		cout << *cItr << " ";
-		/*
 		bool success = bag->add(*cItr);
 		if (!success)
 		{
 			cout << " !add() FAILED: " << *cItr << endl;
 		}
-		*/
 	}
 	/*
 	displayBag(bag);

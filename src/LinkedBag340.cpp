@@ -10,6 +10,17 @@
 
 #include "Include.h"
 
+template <typename ItemType>
+bool Helper<ItemType>::add(const ItemType &newEntry)
+{
+    Node<ItemType> *nextNodePtr = new Node<ItemType>();
+    nextNodePtr->setItem(newEntry);
+    nextNodePtr->setNext(headPtr);
+    headPtr = nextNodePtr;
+    itemCount++;
+    return true;
+}
+
 /* point to the headPtr */
 template <class ItemType>
 LinkedBag<ItemType>::LinkedBag() : headPtr(nullptr), itemCount(0) {}
@@ -93,24 +104,6 @@ int LinkedBag<ItemType>::getCurrentSize340RecursiveNoHelper() const {}
 template <class ItemType>
 int LinkedBag<ItemType>::getFrequencyOf340Recursive(const ItemType &value) const
 {
-    /*  Initially, curPtr must point to the first node. 
-        Because headPtr points to the first node, simply 
-        copy headPtr into currPtr by writing */
-
-    //curPtr = curPtr->getNext();
-    // keep calling getCurrentSize340RecursiveHelper();
-    /*
-    if (anEntry == curPtr->getItem())
-    {
-        frequency++;
-    }
-    else
-    {
-        frequency = getFrequencyOf340RecursiveHelper(curPtr);
-    }
-
-    counter++;
-    */
     int frequency = 0;
 
     Node<ItemType> *curPtr = headPtr;
@@ -123,6 +116,7 @@ int LinkedBag<ItemType>::getFrequencyOf340Recursive(const ItemType &value) const
     {
         frequency = getFrequencyOf340RecursiveHelper(curPtr, value);
     }
+    auto bag{make_unique<LinkedBag<string>>()};
 
     return frequency;
 }
@@ -146,20 +140,45 @@ int LinkedBag<ItemType>::getFrequencyOf340RecursiveHelper(Node<ItemType> *node, 
 /* recursively counts the number of times an entry appears in the Linked Bag.
     This recursive function does not use any helper functions */
 template <class ItemType>
-int LinkedBag<ItemType>::getFrequencyOf340RecursiveNoHelper(const ItemType &entry) const
+int LinkedBag<ItemType>::getFrequencyOf340RecursiveNoHelper(const ItemType &item) const
 {
     /*  Initially, curPtr must point to the first node. 
         Because headPtr points to the first node, simply 
         copy headPtr into currentPtr by writing */
+    int count = 0, frequency = 0;
     Node<ItemType> *currentPtr = headPtr;
 
-    /*
-    while ((currentPtr != nullptr) && (counter < itemCount))
+    while ((currentPtr != nullptr) && (count < itemCount))
     {
+        if (currentPtr->getItem() == item)
+        {
+            frequency++;
+        }
+        count++;
+        currentPtr = currentPtr->getNext();
     }
-    */
 }
 
 /* removes a random entry from the Linked Bag */
 template <class ItemType>
-ItemType LinkedBag<ItemType>::removeRandom340() {}
+ItemType LinkedBag<ItemType>::removeRandom340()
+{
+    Node<ItemType> *entryNodePtr = getPointerTo(entryNodePtr->next());
+
+    bool canRemoveItem = !isEmpty() && (entryNodePtr != nullptr);
+    if (canRemoveItem)
+    {
+        entryNodePtr->setItem(headPtr->getItem());
+
+        Node<ItemType> *nodeToDeletePtr = headPtr;
+
+        headPtr = headPtr->getNext();
+
+        nodeToDeletePtr->setNext(nullptr);
+        delete nodeToDeletePtr;
+        nodeToDeletePtr = nullptr;
+
+        itemCount--;
+    }
+    return entryNodePtr;
+}

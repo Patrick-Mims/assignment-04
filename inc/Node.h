@@ -11,18 +11,21 @@
 //
 //
 
-template<typename ItemType>
-class Node {
+template <typename ItemType>
+class Node
+{
 public:
 	Node();
-	Node(const ItemType&);
-	Node(const ItemType&, Node<ItemType>*);
-	void setItem(const ItemType&);
-	void setNext(Node<ItemType>*);
+	Node(const ItemType &);
+	Node(const ItemType &, Node<ItemType> *);
+	/* accessor methods */
+	void setItem(const ItemType &);
+	void setNext(Node<ItemType> *);
+	/* mutator methods */
 	ItemType getItem() const;
-	Node<ItemType>* getNext() const;
+	Node<ItemType> *getNext() const;
 
 private:
-	ItemType        item{};			 // A data item
-	Node<ItemType>* next{ nullptr }; // Pointer to next node
+	ItemType item{};			   // A data item
+	Node<ItemType> *next{nullptr}; // Pointer to next node
 };
