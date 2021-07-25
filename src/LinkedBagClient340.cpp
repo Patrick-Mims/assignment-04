@@ -2,7 +2,6 @@
 //	Created by: Duc Ta
 
 #include "Include.h"
-
 //
 //
 // PLEASE DO NOT CHANGE THIS FILE
@@ -13,16 +12,14 @@ void displayBag(const unique_ptr<LinkedBag<string>> &);
 
 int main()
 {
-	cout << "----- LINKED BAG 340 C++-----" << endl
+	cout << "----- Patrick's Version of LINKED BAG 340 C++-----" << endl
 		 << endl;
 
 	// 1. Create a bag and add initial nodes
 	cout << "--->>>>> Test 1 --->>>>>" << endl;
 
-	//unique_ptr<LinkedBag<string>> bag{make_unique<LinkedBag<string>>()};
-	unique_ptr<Helper<string>> bag;
-	//auto bag{make_unique<LinkedBag<string>>()};
-	//unique_ptr<LinkedBag<string>> bag{make_unique<LinkedBag<string>>()};
+	//unique_ptr<LinkedBag<string>> bag;
+	unique_ptr<LinkedBag<string>> bag{make_unique<LinkedBag<string>>()};
 
 	// A small vector of small objects to test the bag
 	vector<string> items{"#-END", "5-FIVE", "4-FOUR", "4-FOUR", "3-THREE", "2-TWO", "1-ONE", "0-ZERO", "#-BEGIN"};
