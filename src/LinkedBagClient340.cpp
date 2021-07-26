@@ -34,7 +34,6 @@ int main()
 			cout << " !add() FAILED: " << *cItr << endl;
 		}
 	}
-	/*
 	displayBag(bag);
 
 	// 2. Remove the second node
@@ -126,7 +125,6 @@ int main()
 	displayBag(bag);
 
 	cout << endl;
-	*/
 	return 0;
 }
 
