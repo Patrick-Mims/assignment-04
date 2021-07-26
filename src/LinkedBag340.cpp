@@ -3,59 +3,7 @@
 #include <iostream>
 
 using namespace std;
-/*
-#include "Node.h"
-bool removeSecondNode340();
-bool addEnd340(const ItemType &);
-int getCurrentSize340Iterative() const;
-int getCurrentSize340Recursive() const;
-int getCurrentSize340RecursiveNoHelper() const;
 
-int getFrequencyOf340Recursive(const ItemType &) const;
-int getFrequencyOf340RecursiveNoHelper(const ItemType &) const;
-int getCurrentSize340RecursiveNoHelper() const;
-ItemType removeRandom340();
-*/
-
-/*
-template <typename ItemType>
-LinkedBag<ItemType>::Linkedbag() : headPtr(nullptr), itemCount(0) {}
-*/
-/*
-template <typename ItemType>
-LinkedBag<ItemType>::LinkedBag() : headPtr(nullptr), itemCount(0) {}
-
-template <typename ItemType>
-LinkedBag<ItemType>::LinkedBag(const LinkedBag<ItemType> &aBag)
-{
-    itemCount = aBag.itemCount;
-    Node<ItemType> *origChainPtr = aBag.headPtr;
-
-    if (origChainPtr == nullptr)
-    {
-        headPtr = nullptr;
-    }
-    else
-    {
-        headPtr = new Node<ItemType>();
-        headPtr->setItem(origChainPtr->getItem());
-
-        Node<ItemType> *newChainPtr = headPtr;
-        origChainPtr = origChainPtr->getNext();
-
-        while (origChainPtr != nullptr)
-        {
-            ItemType nextItem = origChainPtr->getItem();
-            Node<ItemType> *newNodePtr = new Node<ItemType>(nextItem);
-            newChainPtr->setNext(newNodePtr);
-            newChainPtr = newChainPtr->getNext();
-            origChainPtr = origChainPtr->getNext();
-        }
-
-        newChainPtr->setNext(nullptr);
-    }
-}
-*/
 template <typename ItemType>
 bool LinkedBag<ItemType>::removeSecondNode340()
 {

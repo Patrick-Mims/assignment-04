@@ -48,7 +48,7 @@ int main()
 	cout << "\n !removeSecondNode340()... ";
 	bag->removeSecondNode340();
 	displayBag(bag);
-
+	/*
 	// 3. Add a node to the end of the linked list
 	cout << "\n--->>>>> Test 3 --->>>>>";
 	cout << "\n !addEnd340()... ";
@@ -125,6 +125,7 @@ int main()
 	displayBag(bag);
 
 	cout << endl;
+	*/
 	return 0;
 }
 
