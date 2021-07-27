@@ -1,6 +1,7 @@
 #include "Node.h"
 #include "LinkedBag.h"
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -41,6 +42,30 @@ bool LinkedBag<ItemType>::addEnd340(const ItemType &newEntry)
 template <typename ItemType>
 ItemType LinkedBag<ItemType>::removeRandom340()
 {
+    Node<ItemType> *curPtr = headPtr;
+
+    int cnt = 0;
+
+    ItemType itemRemoved;
+    static int randomVar;
+
+    srand(time(NULL));
+    randomVar = rand() % itemCount;
+
+    while ((curPtr != nullptr) && (cnt <= itemCount))
+    {
+        if (cnt == randomVar)
+        {
+            itemRemoved = curPtr->getItem();
+            remove(curPtr->getItem());
+        }
+        else
+        {
+            curPtr = curPtr->getNext();
+        }
+        cnt++;
+    }
+    return itemRemoved;
 }
 
 template <class ItemType>
