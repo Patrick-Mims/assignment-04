@@ -31,12 +31,24 @@ bool LinkedBag<ItemType>::removeSecondNode340()
 template <typename ItemType>
 bool LinkedBag<ItemType>::addEnd340(const ItemType &newEntry)
 {
-    Node<ItemType> *nextNodePtr = new Node<ItemType>();
-    nextNodePtr->setItem(newEntry);
-    //nextNodePtr->setNext(headPtr); // ...so the next pointer of the new node is set to nullptr. pg140
-    headPtr = nextNodePtr;
-    //itemCount++;
-    return true;
+    int i = 0;
+    Node<ItemType> *curPtr = headPtr;
+
+    while ((curPtr != nullptr) && (i <= itemCount))
+    {
+        if (i == itemCount - 1)
+        {
+            add(newEntry);
+            return 1;
+        }
+        else
+        {
+            curPtr = curPtr->getNext();
+        }
+        i++;
+    }
+
+    return 0;
 }
 
 template <typename ItemType>

@@ -48,7 +48,6 @@ int main()
 	cout << "\n !removeSecondNode340()... ";
 	bag->removeSecondNode340();
 	displayBag(bag);
-	/*
 	// 3. Add a node to the end of the linked list
 	cout << "\n--->>>>> Test 3 --->>>>>";
 	cout << "\n !addEnd340()... ";
@@ -62,6 +61,7 @@ int main()
 	bag->addEnd340("0-ZERO");
 	displayBag(bag);
 
+	/*
 	// 4. getCurrentSize() - Iterative
 	cout << "\n--->>>>> Test 4 --->>>>>";
 	cout << "\n !getCurrentSize340Iterative - Iterative... ";
