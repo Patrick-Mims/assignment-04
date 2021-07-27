@@ -7,13 +7,13 @@ using namespace std;
 template <typename ItemType>
 bool LinkedBag<ItemType>::removeSecondNode340()
 {
-    static int counter = 0;
+    static int i = 0;
 
     Node<ItemType> *curPtr = headPtr;
     bool canRemoveItem = isEmpty();
-    while ((curPtr != nullptr) && (counter < itemCount))
+    while ((curPtr != nullptr) && (i < itemCount))
     {
-        if (counter == 1)
+        if (i == 1)
         {
             remove(curPtr->getItem());
         }
@@ -21,7 +21,7 @@ bool LinkedBag<ItemType>::removeSecondNode340()
         {
             curPtr = curPtr->getNext();
         }
-        counter++;
+        i++;
     }
 
     return 1;
