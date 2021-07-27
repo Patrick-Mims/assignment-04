@@ -83,7 +83,14 @@ ItemType LinkedBag<ItemType>::removeRandom340()
 template <class ItemType>
 int LinkedBag<ItemType>::getCurrentSize340Iterative() const
 {
-    cout << "getCurrentSize340Iterative()" << endl;
+    int count = 0;
+    vector<ItemType> bag = toVector();
+    vector<string>::iterator it;
+    for (it = bag.begin(); it != bag.end(); ++it)
+    {
+        count++;
+    }
+    return count;
 }
 
 template <class ItemType>
