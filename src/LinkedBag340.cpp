@@ -10,11 +10,9 @@ bool LinkedBag<ItemType>::removeSecondNode340()
     static int counter = 0;
 
     Node<ItemType> *curPtr = headPtr;
-
+    bool canRemoveItem = isEmpty();
     while ((curPtr != nullptr) && (counter < itemCount))
     {
-        cout << curPtr->getItem();
-
         if (counter == 1)
         {
             remove(curPtr->getItem());
@@ -25,32 +23,8 @@ bool LinkedBag<ItemType>::removeSecondNode340()
         }
         counter++;
     }
-    /*
-    bool canRemoveItem = isEmpty(); // false
-    cout << "canRemoveItem: " << canRemoveItem << endl;
-    */
-    /*
-    Node<ItemType> *entryNodePtr = getPointerTo(anEntry);
-    bool canRemoveItem = !isEmpty() && (entryNodePtr != nullptr);
-    */
 
-    /*
-    if (canRemoveItem)
-    {
-        cout << "Removing a Node..." << endl;
-        entryNodePtr->setItem(headPtr->getItem());
-        Node<ItemType> *nodeToDeletePtr = headPtr;
-        headPtr = headPtr->getNext();
-
-        nodeToDeletePtr->setNext(nullptr);
-        delete nodeToDeletePtr;
-        nodeToDeletePtr = nullptr;
-
-        itemCount--;
-    }
-
-    return canRemoveItem;
-    */
+    return 1;
 }
 
 template <typename ItemType>
