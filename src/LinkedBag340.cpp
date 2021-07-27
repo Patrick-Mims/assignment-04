@@ -10,7 +10,7 @@ bool LinkedBag<ItemType>::removeSecondNode340()
     static int i = 0;
 
     Node<ItemType> *curPtr = headPtr;
-    bool canRemoveItem = isEmpty();
+
     while ((curPtr != nullptr) && (i < itemCount))
     {
         if (i == 1)
