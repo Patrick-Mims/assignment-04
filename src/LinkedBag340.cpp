@@ -7,16 +7,37 @@ using namespace std;
 template <typename ItemType>
 bool LinkedBag<ItemType>::removeSecondNode340()
 {
-    bool canRemoveItem = !isEmpty();
+    static int counter = 0;
+
+    Node<ItemType> *curPtr = headPtr;
+
+    while ((curPtr != nullptr) && (counter < itemCount))
+    {
+        cout << curPtr->getItem();
+
+        if (counter == 1)
+        {
+            remove(curPtr->getItem());
+        }
+        else
+        {
+            curPtr = curPtr->getNext();
+        }
+        counter++;
+    }
+    /*
+    bool canRemoveItem = isEmpty(); // false
+    cout << "canRemoveItem: " << canRemoveItem << endl;
+    */
     /*
     Node<ItemType> *entryNodePtr = getPointerTo(anEntry);
     bool canRemoveItem = !isEmpty() && (entryNodePtr != nullptr);
     */
 
+    /*
     if (canRemoveItem)
     {
         cout << "Removing a Node..." << endl;
-        /*
         entryNodePtr->setItem(headPtr->getItem());
         Node<ItemType> *nodeToDeletePtr = headPtr;
         headPtr = headPtr->getNext();
@@ -26,10 +47,10 @@ bool LinkedBag<ItemType>::removeSecondNode340()
         nodeToDeletePtr = nullptr;
 
         itemCount--;
-        */
     }
 
     return canRemoveItem;
+    */
 }
 
 template <typename ItemType>
