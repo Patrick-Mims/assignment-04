@@ -96,27 +96,26 @@ int LinkedBag<ItemType>::getCurrentSize340Iterative() const
 template <class ItemType>
 int LinkedBag<ItemType>::getCurrentSize340Recursive() const
 {
+    Node<ItemType> *curPtr = headPtr;
+    return getCurrentSize340RecursiveHelper(curPtr);
 }
 
-/*
+/* private method */
+template <typename ItemType>
+int LinkedBag<ItemType>::getCurrentSize340RecursiveHelper(Node<ItemType> *cur) const
+{
+    int cnt = 0;
+    while ((cur != nullptr) && (cnt < itemCount))
+    {
+        cnt++;
+    }
+    return cnt;
+}
 
 template <class ItemType>
 int LinkedBag<ItemType>::getCurrentSize340RecursiveNoHelper() const
 {
-    cout << "getCurrentSize340RecursiveNoHelper()" << endl;
 }
-
-template <class ItemType>
-int LinkedBag<ItemType>::getFrequencyOf340Recursive(const ItemType &) const
-{
-    cout << "getFrequencyOf340Recursive()" << endl;
-}
-*/
-
-/*
-int getCurrentSize340Recursive() const;
-int getFrequencyOf340RecursiveNoHelper(const ItemType &) const;
-*/
 
 template <class ItemType>
 int getFrequencyOf340RecursiveNoHelper(const ItemType &theItem)
@@ -124,43 +123,16 @@ int getFrequencyOf340RecursiveNoHelper(const ItemType &theItem)
     cout << "Get Current Size 340 Recursive Helper: " << endl;
     static int count = 0;
 
-    /*
-    if (node->getItem() == theItem)
-    {
-        count++;
-    }
-    */
-
     return count;
 }
 
 template <class ItemType>
 int LinkedBag<ItemType>::getFrequencyOf340Recursive(const ItemType &value) const
 {
-    /*
-    int frequency = 0;
-
     Node<ItemType> *curPtr = headPtr;
-
-    if (curPtr == nullptr)
-    {
-        return frequency;
-    }
-    else
-    {
-        frequency = getFrequencyOf340RecursiveNoHelper(curPtr);
-    }
-
-    return frequency;
-   */
 }
 
 template <class ItemType>
 int LinkedBag<ItemType>::getFrequencyOf340RecursiveNoHelper(const ItemType &) const
-{
-}
-
-template <class ItemType>
-int LinkedBag<ItemType>::getCurrentSize340RecursiveNoHelper() const
 {
 }
