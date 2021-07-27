@@ -47,14 +47,14 @@ ItemType LinkedBag<ItemType>::removeRandom340()
     int cnt = 0;
 
     ItemType itemRemoved;
-    static int randomVar;
+    static int randomItem;
 
     srand(time(NULL));
-    randomVar = rand() % itemCount;
+    randomItem = rand() % itemCount;
 
     while ((curPtr != nullptr) && (cnt <= itemCount))
     {
-        if (cnt == randomVar)
+        if (cnt == randomItem)
         {
             itemRemoved = curPtr->getItem();
             remove(curPtr->getItem());

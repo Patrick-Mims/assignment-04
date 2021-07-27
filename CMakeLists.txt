@@ -9,6 +9,4 @@ project(main)
 include_directories("inc")
 
 file(GLOB SOURCES "src/*.cpp")
-#file(GLOB SOURCES "src/LinkedBagClient340.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
-#add_executable(${PROJECT_NAME} src / LinkedBagClient340.cpp)

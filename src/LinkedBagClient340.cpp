@@ -109,6 +109,7 @@ int main()
 	cout << "\n  ---> 9-NINE:  " << bag->getFrequencyOf340RecursiveNoHelper("9-NINE");
 	displayBag(bag);
 
+	*/
 	// 9. Remove a random node
 	cout << "\n--->>>>> Test 9 --->>>>>";
 	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
@@ -125,7 +126,6 @@ int main()
 	displayBag(bag);
 
 	cout << endl;
-	*/
 	return 0;
 }
 
