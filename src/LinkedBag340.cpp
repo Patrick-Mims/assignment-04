@@ -117,35 +117,12 @@ int getFrequencyOf340RecursiveNoHelper(const ItemType &theItem)
     cout << "Get Current Size 340 Recursive Helper: " << endl;
     static int count = 0;
 
-    /*
-    if (node->getItem() == theItem)
-    {
-        count++;
-    }
-    */
-
     return count;
 }
 
 template <class ItemType>
 int LinkedBag<ItemType>::getFrequencyOf340Recursive(const ItemType &value) const
 {
-    /*
-    int frequency = 0;
-
-    Node<ItemType> *curPtr = headPtr;
-
-    if (curPtr == nullptr)
-    {
-        return frequency;
-    }
-    else
-    {
-        frequency = getFrequencyOf340RecursiveNoHelper(curPtr);
-    }
-
-    return frequency;
-   */
 }
 
 template <class ItemType>
