@@ -35,7 +35,6 @@ int main()
 		}
 	}
 	displayBag(bag);
-	/*
 	// 2. Remove the second node
 	cout << "\n--->>>>> Test 2 --->>>>>";
 	cout << "\n !removeSecondNode340()... ";
@@ -66,15 +65,13 @@ int main()
 	cout << "\n !getCurrentSize340Iterative - Iterative... ";
 	cout << "\n  ---> Current size: " << bag->getCurrentSize340Iterative();
 	displayBag(bag);
-	*/
 
 	// 5. getCurrentSize() - Recursive
-	cout << "\n--->>>>> Test 5 --->>>>>";
-	cout << "\n !getCurrentSize340Recursive() - Recursive... ";
-	cout << "\n  ---> Current size: " << bag->getCurrentSize340Recursive();
-	displayBag(bag);
+	//	cout << "\n--->>>>> Test 5 --->>>>>";
+	//	cout << "\n !getCurrentSize340Recursive() - Recursive... ";
+	//	cout << "\n  ---> Current size: " << bag->getCurrentSize340Recursive();
+	//	displayBag(bag);
 
-	/*
 	// 6. getCurrentSize() - Recursive w/ no helper function
 	cout << "\n--->>>>> Test 6 --->>>>>";
 	cout << "\n !getCurrentSize340RecursiveNoHelper() - Recursive... ";
@@ -109,22 +106,21 @@ int main()
 	cout << "\n  ---> 4-FOUR:  " << bag->getFrequencyOf340RecursiveNoHelper("4-FOUR");
 	cout << "\n  ---> 9-NINE:  " << bag->getFrequencyOf340RecursiveNoHelper("9-NINE");
 	displayBag(bag);
-	*/
 
-	// 9. Remove a random node
-	//	cout << "\n--->>>>> Test 9 --->>>>>";
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	displayBag(bag);
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	displayBag(bag);
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	displayBag(bag);
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
-	//	displayBag(bag);
+	 //9. Remove a random node
+		cout << "\n--->>>>> Test 9 --->>>>>";
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		displayBag(bag);
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		displayBag(bag);
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		displayBag(bag);
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		cout << "\n !removeRandom340() ---> " << bag->removeRandom340();
+		displayBag(bag);
 
 	cout << endl;
 	return 0;

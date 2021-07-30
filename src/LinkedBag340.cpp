@@ -115,6 +115,13 @@ int LinkedBag<ItemType>::getCurrentSize340RecursiveHelper(Node<ItemType> *cur) c
 template <class ItemType>
 int LinkedBag<ItemType>::getCurrentSize340RecursiveNoHelper() const
 {
+    Node<ItemType> *curPtr = headPtr;
+    int cnt = 0;
+    while ((curPtr != nullptr) && (cnt < itemCount))
+    {
+        cnt++;
+    }
+    return cnt;
 }
 
 template <class ItemType>
